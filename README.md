@@ -83,6 +83,8 @@ var clusters = [
 * Use `allowTransitiveCompatibilities` to enable transitive compatibility levels. This is supported in SR >= 3.1.1
 * Use `allowSchemaDeletion` to enable schema deletion from the UI. This is supported in SR >= 3.3.0
 
+## Changelog
+[Here](https://github.com/parrotcdc/schema-registry-ui/wiki/Changelog)
 
 ## License
 

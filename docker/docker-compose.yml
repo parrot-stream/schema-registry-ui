@@ -1,10 +1,10 @@
 version: '3'
 services:
-  schema-registry-ui:
+  kafka-connect-ui:
     build:
       context: ..
       dockerfile: Dockerfile
-    image: parrotstream/schema-registry-ui:0.9.1
+    image: parrotcdc/schema-registry-ui:0.9.1
     networks:
     - parrot
     ports:
