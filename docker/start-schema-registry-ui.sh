@@ -37,7 +37,7 @@ if [[ -z "$SCHEMAREGISTRY_URL" ]]; then
     echo "Schema Registry URL was not set via SCHEMAREGISTRY_URL environment variable."
 else
     echo "Setting Schema Registry URL to $SCHEMAREGISTRY_URL."
-    cat <<EOF >schema-registry-ui/env.js
+    cat <<EOF >schema-registry-ui/dist/env.js
 var clusters = [
    {
      NAME: "default",

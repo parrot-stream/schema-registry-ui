@@ -1,13 +1,6 @@
 # schema-registry-ui
 
-[![release](http://github-release-version.herokuapp.com/github/landoop/schema-registry-ui/release.svg?style=flat)](https://github.com/landoop/schema-registry-ui/releases/latest)
-[![docker](https://img.shields.io/docker/pulls/landoop/schema-registry-ui.svg?style=flat)](https://hub.docker.com/r/landoop/schema-registry-ui/)
-[![Join the chat at https://gitter.im/Landoop/support](https://img.shields.io/gitter/room/nwjs/nw.js.svg?maxAge=2592000)](https://gitter.im/Landoop/support?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-This is a web tool for the [confluentinc/schema-registry](https://github.com/confluentinc/schema-registry) in order to create / view / search / evolve / view history & configure **Avro** schemas of your Kafka cluster.
-
-## Live Demo
-[schema-registry-ui.landoop.com](http://schema-registry-ui.landoop.com)
+This is the fork project of a web tool for the [confluentinc/schema-registry](https://github.com/confluentinc/schema-registry) in order to create / view / search / evolve / view history & configure **Avro** schemas of your Kafka cluster.
 
 ## Prerequisites
 You will need schema-registry installed with CORS enabled.
@@ -20,31 +13,34 @@ access.control.allow.origin=*
 ```
 And then restart the [schema-registry] service
 
-##### Get the set up locally
-We also provide the schema-registry and schema-registry-ui as part of the [fast-data-dev](https://github.com/Landoop/fast-data-dev) docker image for local development setup that also gives all the relevant backends. Just run:
-```
-docker run -d --name=fast-data-dev -p 8081:8081 landoop/fast-data-dev
-```
-Checkout more about fast-data-dev docker container [here](https://github.com/Landoop/fast-data-dev)
-
-## Running it via Docker
+## Running it via docker
 
 To run it via the provided docker image:
 
 ```
-docker pull landoop/schema-registry-ui
+docker pull parrotcdc/schema-registry-ui
 docker run --rm -p 8000:8000 \
            -e "SCHEMAREGISTRY_URL=http://confluent-schema-registry-host:port" \
            landoop/schema-registry-ui
 ```
+## Running it via docker-compose
 
-Please see the [docker readme](https://github.com/Landoop/schema-registry-ui/tree/master/docker) for more information
-and how to enable various features or avoid CORS issues via the proxy flag.
+To run it via docker-compose:
+
+```
+docker-compose -f docker/docker-compose.yml up
+```
+
+It will be accessible with:
+
+```
+http://localhost:8000
+```
 
 ## Build from source
 
 ```
-    git clone https://github.com/Landoop/schema-registry-ui.git
+    git clone https://github.com/parrotcdc/schema-registry-ui.git
     cd schema-registry-ui
     npm install
     npm start
@@ -87,7 +83,7 @@ var clusters = [
 * Use `allowTransitiveCompatibilities` to enable transitive compatibility levels. This is supported in CP >= 3.1.1
 
 ## Changelog
-[Here](https://github.com/Landoop/schema-registry-ui/wiki/Changelog)
+[Here](https://github.com/parrotcdc/schema-registry-ui/wiki/Changelog)
 
 ## License
 
@@ -95,11 +91,5 @@ The project is licensed under the [BSL](http://www.landoop.com/bsl) license.
 
 ## Relevant Projects
 
-* [kafka-topics-ui](https://github.com/Landoop/kafka-topics-ui), UI to browse Kafka data and work with Kafka Topics
-* [kafka-connect-ui](https://github.com/Landoop/kafka-connect-ui), Set up and manage connectors for multiple connect clusters
-* [fast-data-dev](https://github.com/Landoop/fast-data-dev), Docker for Kafka developers (schema-registry,kafka-rest,zoo,brokers,landoop)
-* [Landoop-On-Cloudera](https://github.com/Landoop/Landoop-On-Cloudera), Install and manage your kafka streaming-platform on you Cloudera CDH cluster
-
-
-
-<img src="http://www.landoop.com/images/landoop-dark.svg" width="13" /> www.landoop.com
+* [Kafka Topics UI](https://github.com/parrotcdc/kafka-topics-ui), UI to browse Kafka data and work with Kafka Topics
+* [Kafka Connect UI](https://github.com/parrotcdc/kafka-connect-ui), Set up and manage connectors for multiple connect clusters
