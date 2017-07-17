@@ -18,7 +18,7 @@ And then restart the [schema-registry] service
 To run it via the provided docker image:
 
 ```
-docker pull parrotcdc/schema-registry-ui
+docker pull parrot-stream/schema-registry-ui
 docker run --rm -p 8000:8000 \
            -e "SCHEMAREGISTRY_URL=http://confluent-schema-registry-host:port" \
            landoop/schema-registry-ui
@@ -40,7 +40,7 @@ http://localhost:8000
 ## Build from source
 
 ```
-    git clone https://github.com/parrotcdc/schema-registry-ui.git
+    git clone https://github.com/parrot-stream/schema-registry-ui.git
     cd schema-registry-ui
     npm install
     npm start
@@ -82,8 +82,6 @@ var clusters = [
 * Use `allowGlobalConfigChanges` to enable configuring Global Compatibility Level from the UI.
 * Use `allowTransitiveCompatibilities` to enable transitive compatibility levels. This is supported in CP >= 3.1.1
 
-## Changelog
-[Here](https://github.com/parrotcdc/schema-registry-ui/wiki/Changelog)
 
 ## License
 
@@ -91,5 +89,5 @@ The project is licensed under the [BSL](http://www.landoop.com/bsl) license.
 
 ## Relevant Projects
 
-* [Kafka Topics UI](https://github.com/parrotcdc/kafka-topics-ui), UI to browse Kafka data and work with Kafka Topics
-* [Kafka Connect UI](https://github.com/parrotcdc/kafka-connect-ui), Set up and manage connectors for multiple connect clusters
+* [Kafka Topics UI](https://github.com/parrot-stream/kafka-topics-ui), UI to browse Kafka data and work with Kafka Topics
+* [Kafka Connect UI](https://github.com/parrot-stream/kafka-connect-ui), Set up and manage connectors for multiple connect clusters

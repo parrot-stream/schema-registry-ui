@@ -4,7 +4,7 @@ services:
     build:
       context: ..
       dockerfile: Dockerfile
-    image: parrotcdc/schema-registry-ui:0.9.1
+    image: parrotstream/schema-registry-ui:0.9.1
     networks:
     - parrot
     ports:
