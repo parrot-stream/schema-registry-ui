@@ -1,6 +1,6 @@
 version: '3'
 services:
-  kafka-connect-ui:
+  schema-registry-ui:
     build:
       context: ..
       dockerfile: Dockerfile
