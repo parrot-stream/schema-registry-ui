@@ -72,6 +72,7 @@ const config = {
             name: "manifest"
         }),
         new HtmlWebpackPlugin({ template: "./src/index.html" }),
+        new HtmlWebpackPlugin({ template: "./src/index-cloudera.html" }),
         new CopyWebpackPlugin([{
             from: __dirname + '/src/assets',
             to: path.resolve(__dirname, "dist/src/assets")
