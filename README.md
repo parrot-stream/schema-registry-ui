@@ -92,3 +92,62 @@ The project is licensed under the [BSL](http://www.landoop.com/bsl) license.
 
 * [Kafka Topics UI](https://github.com/parrot-stream/kafka-topics-ui), UI to browse Kafka data and work with Kafka Topics
 * [Kafka Connect UI](https://github.com/parrot-stream/kafka-connect-ui), Set up and manage connectors for multiple connect clusters
+
+
+
+# **kafka-topics-ui**
+___
+
+### Description
+___
+
+This image runs [**Kafka Topics UI**](https://github.com/Landoop/kafka-topics-ui.git).
+
+
+You can pull it with:
+
+    docker pull parrotstream/kafka-topics-ui
+
+
+You can also find other images based on different Kafka Topics UI releases, using a different tag in the following form:
+
+    docker pull parrotstream/kafka-topics-ui:[kafka-topics-ui-release]
+
+
+Start with Docker Compose:
+
+    docker-compose -p parrot -f docker.parrot/docker-compose.yml up
+
+
+## Configuration
+
+In the docker-compose.yml you can update the following environment variables:
+
+  - `SCHEMAREGISTRY_URL`: the URL to point to the Schema Registry
+  - `PROXY`: set to `true` the URL to point to Kafka Rest Proxy
+  - `PORT`: the docker internal port to expose the Schema Registry UI. Remember to change the port mapping in the docker-compose.yml
+  - `ALLOW_GLOBAL` [`true`|`false`]: set to `true` to enable global compatibility level change support
+  - `ALLOW_TRANSITIVE` [`true`|`false`]: set to `true` to enable transitive compatibility modes support
+
+
+Once started you'll be able to access to the following UI:
+
+| **Schema Registry UI**      |**URL**                  |
+|:----------------------------|:------------------------|
+| *Schema Registry UI*        | http://localhost:8002    |
+
+
+## Relevant Projects
+
+* [Kafka Topics UI](https://github.com/parrot-stream/kafka-topics-ui), UI to browse Kafka data and work with Kafka Topics
+* [Kafka Connect UI](https://github.com/parrot-stream/kafka-connect-ui), Set up and manage connectors for multiple connect clusters
+
+
+## License
+
+The project is licensed under the [BSL](http://www.landoop.com/bsl) license.
+
+
+## Available tags:
+
+- Kafka Connect UI 0.9.6 ([0.9.6](https://github.com/parrot-stream/kafka-connect-ui/blob/0.9.6/Dockerfile), [latest](https://github.com/parrot-stream/kafka-connect-ui/blob/latest/Dockerfile))

@@ -1,23 +1,23 @@
 version: '3'
 services:
-  kafka-connect-ui:
+  schema-registry-ui:
+    container_name: schema-registry-ui
     build:
       context: ..
       dockerfile: Dockerfile
-    image: parrotstream/schema-registry-ui:0.9.1
-    networks:
-    - parrot
+    image: parrotstream/schema-registry-ui:0.9.5
     ports:
-    - 8000:8000
+    - 8002:8002
+    external_links:
+    - kafka
     environment:
-      SCHEMAREGISTRY_URL: http://parrot:8081
+      SCHEMAREGISTRY_URL: http://kafka:8081
+      PORT: 8002
       PROXY: "true"
-      ALLOW_GLOBAL: 1
-      ALLOW_TRANSITIVE: 1
-      SCHEMA_REGISTRY_UI_PORT: $SCHEMA_REGISTRY_UI_PORT
+      ALLOW_GLOBAL: "true"
+      ALLOW_TRANSITIVE: "true"
+
 networks:
   default:
     external:
-      name: parrot
-  parrot:
-    driver: bridge
+      name: parrot_default

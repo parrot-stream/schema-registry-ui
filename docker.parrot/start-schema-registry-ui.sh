@@ -5,6 +5,8 @@ INSECURE_PROXY=""
 ALLOW_GLOBAL="${ALLOW_GLOBAL:-false}"
 ALLOW_TRANSITIVE="${ALLOW_TRANSITIVE:-false}"
 
+cat /caddy/Caddyfile.template |
+        sed -e "s/8002/$PORT/" > /caddy/Caddyfile
 
 if echo "$PROXY_SKIP_VERIFY" | egrep -sq "true|TRUE|y|Y|yes|YES|1"; then
     INSECURE_PROXY=insecure_skip_verify
