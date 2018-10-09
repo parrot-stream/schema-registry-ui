@@ -5,7 +5,7 @@ services:
     build:
       context: ..
       dockerfile: Dockerfile
-    image: parrotstream/schema-registry-ui:0.9.5
+    image: parrotstream/schema-registry-ui:latest
     ports:
     - 8002:8002
     external_links:
