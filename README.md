@@ -128,7 +128,7 @@ In the docker-compose.yml you can update the following environment variables:
   - `PORT`: the docker internal port to expose the Schema Registry UI. Remember to change the port mapping in the docker-compose.yml
   - `ALLOW_GLOBAL` [`true`|`false`]: set to `true` to enable global compatibility level change support
   - `ALLOW_TRANSITIVE` [`true`|`false`]: set to `true` to enable transitive compatibility modes support
-
+  - `ALLOW_DELETION` [`true`|`false`]: set to `true` to enable schema deletion support
 
 Once started you'll be able to access to the following UI:
 

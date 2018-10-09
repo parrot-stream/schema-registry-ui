@@ -16,7 +16,7 @@ services:
       PROXY: "true"
       ALLOW_GLOBAL: "true"
       ALLOW_TRANSITIVE: "true"
-
+      ALLOW_DELETION: "true"
 networks:
   default:
     external:
